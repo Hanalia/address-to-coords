@@ -22,9 +22,12 @@ const getNaverAddress = async (address) => {
             }
         });
 
-        if (!data.meta.totalCount) return null;
-        logger.debug(`Successfully fetched Naver address for: ${address}`);
+        if (!data || !data.meta || !data.meta.totalCount) {
+            logger.error(`Received unexpected data structure or null data for Naver address of: ${address}`);
+            return null;
+        }
 
+        logger.debug(`Successfully fetched Naver address for: ${address}`);
 
         const { x, y, roadAddress: naverRoadAddress, jibunAddress: naverjibunAddress, addressElements } = data.addresses[0];
         const dongmyun = addressElements.find(item => item.types[0] == "DONGMYUN").shortName;
