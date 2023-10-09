@@ -1,0 +1,7 @@
+{
+    "inputFilePath": "path_to_your_input_file.csv",
+    "jibunColumnName": "jibunAddress",
+    "roadColumnName": "roadAddress",
+    "NAVER_CLIENT_ID": "YOUR_NAVER_CLIENT_ID_HERE",
+    "NAVER_CLIENT_SECRET": "YOUR_NAVER_CLIENT_SECRET_HERE"
+}
